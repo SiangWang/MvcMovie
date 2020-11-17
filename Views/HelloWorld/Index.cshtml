@@ -1,0 +1,25 @@
+@model MvcMovie.Models.HelloWorldModel
+
+@{
+    ViewData["Title"] = "Movie List";
+}
+
+<div class="card">
+    <h2 class="card-header">
+        @Model.Title
+    </h2>
+    <div class="card-body">
+        <div class="alert alert-primary">Hello World</div>
+        <p>@Model.Message</p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary">OK</button>
+    </div>
+</div>
+
+@await Html.PartialAsync("_Partial",
+                        "123",
+                        new ViewDataDictionary(ViewData)
+                        {
+                            { "index", 0 }
+                        })
